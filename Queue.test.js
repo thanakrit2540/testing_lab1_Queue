@@ -36,3 +36,15 @@ test('สร้าง queue size 1 และ dequeue เลย จะต้อ�
     const queue = new Queue(1);
     expect(queue.dequeue()).toBe(null);
 })
+
+test('new bugs', ()=> {
+    const queue = new Queue(3);
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    queue.enqueue(5);
+    expect(queue.dequeue()).toBe(5);
+})
